@@ -70,7 +70,6 @@ async def sub_agent(category: str, prompt: str, sentence: str) -> SubAgentOutput
             result = await attempt_analysis()
             return result
         except Exception as e:
-            print("FUCK SUB")
             if attempt < 2:
                 await asyncio.sleep(2 ** attempt)
 
@@ -120,7 +119,6 @@ async def process_sentence(sentence: str) -> TeacherAgentOutput:
             result = await attempt_teacher_analysis()
             return result
         except Exception as e:
-            print("FUCK TEA")
             if attempt < 2:
                 await asyncio.sleep(2 ** attempt)
 
@@ -185,7 +183,6 @@ Keep in mind that you do not have to use 저는 or 나는 all the time when it c
                 result = await attempt_quiz_generation()
                 return result
             except Exception as e:
-                print("FUCK QUIZ")
                 if attempt < 2:
                     await asyncio.sleep(2 ** attempt)
 
